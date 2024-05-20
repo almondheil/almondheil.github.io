@@ -14,8 +14,6 @@ favicon: "logo.png" # name+extension of favicon (which must be put on the root f
 
 remote_theme: no-style-please # remote_theme is needed when hosting on github pages
 
-source: source
-
 theme_config:
   appearance: "light" # can be "light", "dark" or "auto"
   back_home_text: "../" # customize text for homepage link in post layout
