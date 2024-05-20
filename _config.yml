@@ -1,3 +1,5 @@
-theme: jekyll-theme-minimal
-title: Octocat's homepage
-description: Bookmark this to keep an eye on my project updates!
+url: "https://almendra.dev"
+title: "almendra.dev"
+theme: no-style-please
+remote_theme: no-style-please
+source: source
