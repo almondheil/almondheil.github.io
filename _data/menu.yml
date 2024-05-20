@@ -11,13 +11,6 @@ entries:
       - title: public keys
         url: pubkeys
 
-  - title: me (professional)
-    entries:
-      - title: resume
-        # url: TODO: add
-      - title: linkedin
-        url: https://www.linkedin.com/in/almond-heil/
-
   - title: til
     post_list:
       category: til
