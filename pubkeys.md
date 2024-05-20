@@ -3,14 +3,7 @@ layout: page
 title: pubkeys
 ---
 
-<style>
-/* do not wrap code blocks (rsa pubkey is long) */
-div.highlighter-rouge code {
-    white-space: pre;
-}
-</style>
-
-## ssh (laptop)
+# ssh (laptop)
 
 ```
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMlL2X6/l2OyhIkhWWla6+oq5fqsxn9FISJaoDCpUyM6 almond@strawberry
@@ -22,7 +15,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDiZCB0F4cwQLH7ToyABBwxAHUNSf05XQEN/Y06LXSS
 
 last updated: 2024-05-20
 
-## pgp
+# pgp
 
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -45,14 +38,3 @@ lRe1raQM1x/26wG+GWIYIw7byw4=
 ```
 
 last updated: 2024-05-20
-
-<script>
-    var headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
-
-    for (var i = 0; i < headings.length; i++) {
-        headings[i].innerHTML =
-            '<a href="#' + headings[i].id + '">' +
-                headings[i].innerText +
-            '</a>';
-    }
-</script>

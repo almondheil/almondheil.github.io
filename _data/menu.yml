@@ -11,30 +11,26 @@ entries:
       - title: public keys
         url: pubkeys
 
-  - title: all posts
+  - title: me (professional)
+    entries:
+      - title: resume
+        # url: TODO: add
+      - title: linkedin
+        url: https://www.linkedin.com/in/almond-heil/
+
+  - title: til
     post_list:
+      category: til
       limit: 5
       show_more: true
-      show_more_text: See archive...
-      show_more_url: archive.html
+      show_more_text: til archive...
+      show_more_url: til_archive
 
-  - title: posts by category
+  - title: projects
     post_list:
-      category: example2
+      category: project
+      limit: 5
       show_more: true
-      show_more_text: See more posts...
-      show_more_url: example2-archive.html
+      show_more_text: project archive...
+      show_more_url: project_archive
 
-  - title: rss
-    url: feed.xml
-  
-  - title: another list
-    entries:
-      - title: with subitems
-        entries:
-          - title: with subsubitems
-          - title: example page
-            url: about
-  - title: PRO TIP
-    entries:
-      - title: to edit this menu, edit _data/menu.yml file

@@ -26,3 +26,13 @@ a.headerLink {
 a.headerLink:hover {
     color: #000000f0;
 }
+
+/* Do not wrap code blocks */
+div.highlighter-rouge code {
+    white-space: pre;
+}
+
+/* Do not italicize block quotes */
+blockquote {
+    font-style: normal;
+}

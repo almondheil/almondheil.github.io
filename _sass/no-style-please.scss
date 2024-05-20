@@ -70,6 +70,7 @@ table, th, td {
 code {
   color: white;
   background: black;
+  padding: 0.2ex;
 }
 
 div.highlighter-rouge code {
@@ -82,9 +83,9 @@ div.highlighter-rouge code {
 blockquote {
   font-style: italic;
   border: thin solid black;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
-  p { margin: 0; }
 }
 
 img {
