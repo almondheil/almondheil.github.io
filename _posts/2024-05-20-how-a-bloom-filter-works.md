@@ -1,6 +1,8 @@
 ---
 layout: post
 category: til
+slug: bloom filter
+title: How a Bloom Filter Works
 ---
 
 While I was getting ready to come home from college this year, I was reminded
