@@ -11,7 +11,7 @@ entries:
       - title: public keys
         url: pubkeys
 
-  - title: til
+  - title: today I learned
     post_list:
       category: til
       limit: 5
@@ -19,7 +19,7 @@ entries:
       show_more_text: til archive...
       show_more_url: til_archive
 
-  - title: projects
+  - title: projects (date shown is start date)
     post_list:
       category: project
       limit: 5
