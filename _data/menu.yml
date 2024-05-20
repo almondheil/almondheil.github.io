@@ -8,7 +8,8 @@ entries:
         url: mailto:contact@almendra.dev
       - title: github
         url: https://github.com/almondheil
-      #- title: "used by <a href='https://riggraz.dev'>riggraz.dev</a> and <a href='https://github.com/riggraz/no-style-please/network/dependents'>many others</a>"
+      - title: public keys
+        url: pubkeys
 
   - title: all posts
     post_list:
