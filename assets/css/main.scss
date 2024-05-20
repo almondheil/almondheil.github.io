@@ -2,3 +2,27 @@
 ---
 
 @import "no-style-please";
+
+/* Fade target transparent over 1.5 seconds */
+*:target {
+    background: yellow; /* fallback to non-animated yellow */
+    animation: fade_to_transparent 1.5s forwards
+}
+@keyframes fade_to_transparent {
+    from {
+        background: yellow;
+    }
+    to {
+        background: transparent;
+    }
+}
+
+/* Format links to headers in a less obtrusive way,  */
+a.headerLink {
+    color: #0000002c;
+    padding-left: 1ex;
+    text-decoration: none;
+}
+a.headerLink:hover {
+    color: #000000f0;
+}
