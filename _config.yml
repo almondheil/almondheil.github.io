@@ -3,16 +3,15 @@ author: almond Heil # name of site's author
 email: contact@almendra.dev # email of site's author
 url: https://almendra.dev # root address of the site
 baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
-description: > # description of the site (multiple lines allowed)
-  A (nearly) no-CSS, fast, minimalist Jekyll theme.
+# description: > # description of the site (multiple lines allowed)
+#   A (nearly) no-CSS, fast, minimalist Jekyll theme.
 
 permalink: /:slug.html
 
 favicon: "logo.png" # name+extension of favicon (which must be put on the root folder)
 # goat_counter: "yoursitename" # put your GoatCounter name if you want to use GoatCounter analytics
 
-# local and remote themes, for local and github pages
-theme: no-style-please
+# set remote theme for github pages
 remote_theme: no-style-please
 
 theme_config:
