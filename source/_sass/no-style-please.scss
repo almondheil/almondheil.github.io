@@ -6,6 +6,14 @@
 
     &.ioda { filter: invert(0); }
   }
+
+  /* links stay purple and blue, even in dark mode -- I am opinionated on this issue */
+  a { 
+    filter: invert(1);
+    color: #64adf1;
+  }
+  a:visited { color: #a76ff5; }
+  a:active, a:visited:active { color: #ff0000; }
 }
 
 body[a="dark"] { @include dark-appearance; }
@@ -85,7 +93,6 @@ blockquote {
   border: thin solid black;
   padding-left: 1rem;
   padding-right: 1rem;
-
 }
 
 img {
