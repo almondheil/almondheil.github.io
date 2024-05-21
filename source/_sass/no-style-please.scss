@@ -8,16 +8,17 @@
   }
 
   /* links stay purple and blue, even in dark mode -- I am opinionated on this issue */
-  a { 
+  a:not(.headerLink) { 
     filter: invert(1);
     color: #64adf1;
   }
-  a:visited { color: #a76ff5; }
-  a:active, a:visited:active { color: #ff0000; }
+  a:visited:not(.headerLink) { color: #a76ff5; }
+  a:active:not(.headerLink), a:visited:active:not(.headerLink) { color: #ff0000; }
+
+  code { filter: invert(1); }
 }
 
 body[a="dark"] { @include dark-appearance; }
-
 
 @media (prefers-color-scheme: dark) {
   body[a="auto"] { @include dark-appearance; }

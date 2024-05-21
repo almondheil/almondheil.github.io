@@ -18,13 +18,18 @@
 }
 
 /* Format links to headers in a less obtrusive way,  */
-a.headerLink {
-    color: #0000002c;
+.headerLink {
+    color: #b6b6b6;
     padding-left: 1ex;
     text-decoration: none;
 }
-a.headerLink:hover {
-    color: #000000f0;
+.headerLink:hover {
+    color: black;
+}
+
+/* all code blocks get a gray background, not black */
+code {
+    background: #282A36;
 }
 
 /* Do not wrap code blocks */
