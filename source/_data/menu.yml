@@ -4,11 +4,12 @@
 entries:
   - title: me
     entries:
+      - title: almond (they/them)
       - title: email
         url: mailto:contact@almendra.dev
       - title: github
         url: https://github.com/almondheil
-      - title: public keys
+      - title: pubkeys
         url: pubkeys
 
   - title: today I learned
@@ -26,4 +27,3 @@ entries:
       show_more: true
       show_more_text: project archive...
       show_more_url: project
-
