@@ -17,13 +17,13 @@ entries:
       limit: 5
       show_more: true
       show_more_text: til archive...
-      show_more_url: til_archive
+      show_more_url: til
 
-  - title: projects (date shown is start date)
+  - title: projects (by start date)
     post_list:
       category: project
       limit: 5
       show_more: true
       show_more_text: project archive...
-      show_more_url: project_archive
+      show_more_url: project
 

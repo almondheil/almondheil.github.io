@@ -1,1 +1,6 @@
-<a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+<ul class="navlist">
+    <li><a href="{{ "/" | relative_url }}">~</a></li>
+    {%- if page.category-%}
+    <li><a href="{{ page.category | relative_url }}">..</a></li>
+    {%- endif -%}
+</ul>
