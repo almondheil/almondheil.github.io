@@ -17,13 +17,13 @@ entries:
       category: til
       limit: 5
       show_more: true
-      show_more_text: more...
+      show_more_text: see more...
       show_more_url: til
 
-  - title: projects (by start date)
+  - title: recent projects
     post_list:
       category: project
       limit: 5
       show_more: true
-      show_more_text: more...
+      show_more_text: see more...
       show_more_url: project

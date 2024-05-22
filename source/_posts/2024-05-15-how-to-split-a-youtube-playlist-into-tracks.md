@@ -2,7 +2,7 @@
 layout: post
 category: til
 slug: split youtube cuelist
-title: How to Split a YouTube Playlist Into Tracks
+title: How to Split a YouTube Playlist Into MP3 Tracks
 ---
 
 Today, I learned how to split a downloaded YouTube playlist into individual tracks
