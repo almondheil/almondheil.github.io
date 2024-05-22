@@ -1,5 +1,5 @@
 ---
 layout: archive
 which_category: project
-title: all projects
+title: projects (by start date)
 ---

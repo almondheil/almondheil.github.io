@@ -5,7 +5,7 @@ entries:
   - title: me
     entries:
       - title: almond (they/them)
-      - title: email
+      - title: contact@almendra.dev
         url: mailto:contact@almendra.dev
       - title: github
         url: https://github.com/almondheil
@@ -17,7 +17,7 @@ entries:
       category: til
       limit: 5
       show_more: true
-      show_more_text: til archive...
+      show_more_text: more...
       show_more_url: til
 
   - title: projects (by start date)
@@ -25,5 +25,5 @@ entries:
       category: project
       limit: 5
       show_more: true
-      show_more_text: project archive...
+      show_more_text: more...
       show_more_url: project
