@@ -2,7 +2,7 @@
 # https://github.com/riggraz/no-style-please#customize-the-menu
 
 entries:
-  - title: me
+  - title: me (regular)
     entries:
       - title: almond (they/them)
       - title: contact@almendra.dev
@@ -11,6 +11,13 @@ entries:
         url: https://github.com/almondheil
       - title: pubkeys
         url: pubkeys
+
+  - title: me (professional)
+    entries:
+      - title: resume
+        url: almondHeil-Resume.pdf
+      - title: linkedin
+        url: https://www.linkedin.com/in/almond-heil
 
   - title: today I learned
     post_list:
