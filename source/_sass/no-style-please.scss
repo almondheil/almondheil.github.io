@@ -7,7 +7,11 @@
     &.ioda { filter: invert(0); }
   }
 
-  /* set link colors so that they will invert to blue and purple */
+  /* override colors for dark mode 
+   * I could use invert(1) again, but this makes selection color invert too 
+   * and makes everything look super uneven.
+   * my fix is to hardcode the inverted values of what I want */
+
   a:not(.headerLink) { 
     color: #9b520e;
   }
@@ -17,6 +21,11 @@
   code { 
     color: black;
     background-color: #d7d5c9;
+  }
+
+  ::selection { 
+    color: black;
+    background-color: #ca7b1b;
   }
 }
 
@@ -45,6 +54,11 @@ body {
 }
 
 .post-meta { text-align: right; }
+
+::selection { 
+  color: white;
+  background-color: #3584e4;
+}
 
 h2, h3, h4, h5, h6 { margin-top: 3rem; }
 
