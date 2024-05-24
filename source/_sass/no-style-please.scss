@@ -7,15 +7,17 @@
     &.ioda { filter: invert(0); }
   }
 
-  /* links stay purple and blue, even in dark mode -- I am opinionated on this issue */
+  /* set link colors so that they will invert to blue and purple */
   a:not(.headerLink) { 
-    filter: invert(1);
-    color: #64adf1;
+    color: #9b520e;
   }
-  a:visited:not(.headerLink) { color: #a76ff5; }
-  a:active:not(.headerLink), a:visited:active:not(.headerLink) { color: #ff0000; }
+  a:visited:not(.headerLink) { color: #58900a; }
+  a:active:not(.headerLink), a:visited:active:not(.headerLink) { color: #00ffff; }
 
-  code { filter: invert(1); }
+  code { 
+    color: black;
+    background-color: #d7d5c9;
+  }
 }
 
 body[a="dark"] { @include dark-appearance; }
@@ -78,7 +80,7 @@ table, th, td {
 
 code {
   color: white;
-  background: black;
+  background: #282A36;
   padding: 0.2ex;
 }
 
