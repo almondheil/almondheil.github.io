@@ -24,12 +24,11 @@ my future reference and in case anyone else wants to do the same thing.
 
 The following tools are needed to follow this tutorial. I've given the names
 of packages I had to install on Arch Linux, so your package names may vary.
-- ffmpeg
-- perl (version 5)
-- yt-dlp
-- cuetools
-- python-mutagen
-- lame
+- `ffmpeg`
+- `perl` (version 5)
+- `yt-dlp`
+- `cuetools`
+- `python-mutagen`
 
 ## Downloading the Playlist Audio
 
@@ -37,14 +36,15 @@ First, download the playlist with yt-dlp. The details here correspond to the
 playlist I was working with when first attempting this project.
 
 ```
-yt-dlp --extract-audio --audio-quality 0 \
+yt-dlp --extract-audio --audio-format wav --audio-quality 0 \
     "https://www.youtube.com/watch?v=Hti1jmkMrnU" \
     --output "azure - nujabes playlist for the groovy yayayayy"
 ```
 
 Flag breakdown:
  - `--extract-audio` saves an audio file, rather than a video one.
- - `--audio-format mp3` specifies the audio format that should be used. I chose mp3 because YouTube audio is already lossy.
+ - `--audio-format wav` specifies the audio format that should be used.
+   I chose wav because it's accepted by a script we use down the line.
  - `--audio-quality 0` maximizes the audio quality we download.
  - `--output` sets the name of the saved file.
 
@@ -88,7 +88,7 @@ REM GENRE Lo-Fi
 REM DATE 2024
 PERFORMER Nujabes
 TITLE "nujabes playlist for the groovy yayayayy"
-FILE "azure - nujabes playlist for the groovy yayayayy.mp3" MP3
+FILE "azure - nujabes playlist for the groovy yayayayy.wav" WAVE
   TRACK 01 AUDIO
     TITLE "F.I.L.O. (Instrumental)"
     PERFORMER "Nujabes, Shing02"
@@ -200,25 +200,29 @@ linked on the YouTube playlist,
 <https://yukoart.com/work/inq-mobile/>{:target="_blank"}. Save your image 
 as `image.jpg` in the same directory as the individual songs.
 
-To add the album art to a file, I found a useful command from Baeldung (<https://www.baeldung.com/linux/terminal-music-add-album-art>{:target="_blank"}). For mp3 files, we use lame. There's one drawback: lame can't add the art in-place.
+> NOTE: Try to keep your file pretty small, since its size will be added on to each
+> track. 300x300 pixels is good.
 
+To add the album art to a file, I found a useful command from Baeldung (<https://www.baeldung.com/linux/terminal-music-add-album-art>{:target="_blank"}). 
 I wrote a really simple bash loop that will add art to all the mp3 files in the current
 directory. 
 
-> **WARNING**: Make sure you have the `image.jpg` in the same directory, because this
-> loop doesn't check for errors at all.
+> NOTE: The funkiness with the `&&` and `||` lets us run a different command if ffmpeg
+> returned a success or returned a failure.
 >
-> If you don't have it in the right place and with the right name, this just 
-> deletes all your audio files and you'll have to regenerate them.
+> If it succeeded (`&&`), we remove the temporary file. If it failed (`||`), we 
+> move the temporary file back to its original name to avoid messing up the directory state.
 
 ```
 for file in *.mp3; do
-	tempfile="${file}.temp"
-	mv "$file" "$tempfile"
-	ffmpeg -i "$tempfile" -i image.jpg -map_metadata 0 -map 0 -map 1 -acodec copy "$file"
-	rm "$tempfile"
+  tempfile="${file}.temp"
+  mv "$file" "$tempfile"
+  ffmpeg -i "$tempfile" -i image.jpg -map_metadata 0 -map 0 -map 1 -acodec copy "$file" \
+    && rm "$tempfile" \
+    || mv "$tempfile" "$file"
 done
-rm image.jpg
 ```
 
-Now, the album art should be there across all the sound files!
+Then, just remove the `image.jpg` file--it is encoded into the metadata of the
+mp3s, and no longer needs to exist on disk. You should be ready to listen to your music,
+and the metadata and album art will be available to your music program!
