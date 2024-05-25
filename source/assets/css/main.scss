@@ -27,16 +27,6 @@
     color: black;
 }
 
-/* Do not wrap code blocks */
-div.highlighter-rouge code {
-    white-space: pre;
-}
-
-/* Do not italicize block quotes */
-blockquote {
-    font-style: normal;
-}
-
 .navlist {
     list-style: none;
     display: inline-block;

@@ -19,8 +19,9 @@
   a:active:not(.headerLink), a:visited:active:not(.headerLink) { color: #00ffff; }
 
   code { 
+  border: thin solid #adaca2;
     color: black;
-    background-color: #d7d5c9;
+    background-color: white;
   }
 
   ::selection { 
@@ -101,15 +102,15 @@ code {
 div.highlighter-rouge code {
   display: block;
   overflow-x: auto;
-  white-space: pre-wrap;
+  white-space: pre;
   padding: 1rem;
 }
 
 blockquote {
-  font-style: italic;
-  border: thin solid black;
+  border-left: 2px solid #484c61;
+  color: #484c61;
   padding-left: 1rem;
-  padding-right: 1rem;
+  margin-left: 2rem;
 }
 
 img {
