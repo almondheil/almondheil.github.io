@@ -5,25 +5,26 @@ slug: average coin
 title: The Average Value of a Coin
 ---
 
-For reasons that are too stupid to write down, I've to try and figure out
-what *the average US coin* is. "Oh, that's simple!" you might think. "You
-could just take the average of each coin denomination."
+For reasons that are too stupid to write down, I decided to try and figure out
+what *the average US coin* is. I love a good stupid statistical adventure, especially when I should be sleeping instead of working on a spreadsheet.
 
-You definitely can do that, and you'll get 10.25¢, but there's a factor I find more
-interesting: the actual number of each coin that gets produced. In other words,
-I don't just want the average coin--I want to take a weighted average so I can take
-into account the quantities of coins that are minted.
+First, let me shoot down the easiest approach. We *could* just take the average of
+1, 5, 10, and 25 cents. If we did this we'd get 10.25¢, but there's a factor I find more
+interesting: the actual number of each coin that gets produced. In other words, I want
+an average that's weighted by the number of coins produced.
 
-To do this, I need some source on how many coins actually do get minted.
+To do this, I need some source on how many coins actually get minted each year.
 Luckily, Wikipedia swoops in with a table showing coin production since the year 1887! (<https://en.wikipedia.org/wiki/United_States_Mint_coin_production>{:target="_blank"})
 
-I go ahead and copy+paste this entire table into Google Sheets, and am delighted that
-it formats the table correctly when pasted. I just need to go through and delete the citations to make those cells register as numbers.
+Copy+pasting this into Google Sheets, I was really surprised that it automatically
+formatted everything correctly--I was worried the whole table would get pasted into a single cell,  which would be stupid. 
+This made my job with data cleaning very easy--I just had to delete citations to make everything
+recognized as a number.
 
-At this point, I also decided that I wanted to find the average weight of a coin
+At this point, I also decided that I wanted to find the average mass of a coin
 so I quicky searched around for how much coins weighed.
 I also decided to limit my date range to 1982 and later, 
-because the weight of a penny varied a *lot* before that time.
+because the mass of a penny varied way more before that time.
 
 | Coin | Value ($) | Mass (g) |
 ------ | --------- | ---------- |
@@ -36,7 +37,7 @@ because the weight of a penny varied a *lot* before that time.
 > to ignore these because I don't really care about them.
 
 With this, I can sum up the number of coins produced since 1982, and use that to derive
-the total value and total weight produced.
+the total value and total mass that have been minted.
 
 | Coin | # Produced | Total Value ($) | Total Mass (g) |
 ------ | --------- | ---------- | -------------------- |
@@ -45,12 +46,12 @@ the total value and total weight produced.
 | Dime | 8.98e+10 | 8.98e+09 | 1.97e+11 |
 | Quarter | 8.45e+10 | 2.11e+10 | 4.82e+11 |
 
-Interesting things to note from this table:
+Two main things to note from this table:
 - These are MASSIVE numbers! There have been 3.7 **billion** dollars of pennies produced alone.
 - The most-produced coin is pennies, by a whole order of magnitude. I didn't expect this,
   I feel like I see higher denominations more often! Maybe I just don't notice pennies.
 
-At this point, I can actually answer my initial question by taking these averages.
+At this point, I can actually answer my initial question by taking these averages:
 
 ```
                       avg(values)
