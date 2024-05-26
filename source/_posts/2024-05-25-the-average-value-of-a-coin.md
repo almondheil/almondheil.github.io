@@ -54,17 +54,17 @@ Two main things to note from this table:
 At this point, I can actually answer my initial question by taking these averages:
 
 ```
-                      avg(values)
+                      sum(values)
 average coin value = ------------- = $0.06
-                      avg(number)
+                      sum(number)
 ```
 
 and 
 
 ```
-                     avg(masses)
+                     sum(masses)
 average coin mass = ------------- = 3.5g
-                     avg(number)
+                     sum(number)
 ```
 
 There we go, all done!
