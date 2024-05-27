@@ -29,6 +29,7 @@ of packages I had to install on Arch Linux, so your package names may vary.
 - `yt-dlp`
 - `cuetools`
 - `python-mutagen`
+- `lame`
 
 ## Downloading the Playlist Audio
 
