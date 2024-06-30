@@ -19,9 +19,8 @@
   a:active:not(.headerLink), a:visited:active:not(.headerLink) { color: #00ffff; }
 
   code { 
-  border: thin solid #adaca2;
-    color: black;
-    background-color: white;
+    background-color: #3e3e3e;
+    padding: 0.1em;
   }
 
   ::selection { 
