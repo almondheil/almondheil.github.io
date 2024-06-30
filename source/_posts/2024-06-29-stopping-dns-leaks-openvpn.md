@@ -34,7 +34,7 @@ First, let me run down some solutions that I couldn't get to work:
 
    The second issue is pretty closely-related to the first. For a long time,
    the moment I disconnected from the VPN the `vpnfailsafe` would protect me
-   from myself...by disconnecting my WiFi entirely. Eventually I realized there
+   from myself (by disconnecting my WiFi entirely). Eventually I realized there
    was a script to undo its firewall changes, but when I tried to implement
    this I started seeing leaks even when the VPN was connected.
 
