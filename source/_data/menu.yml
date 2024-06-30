@@ -10,6 +10,10 @@ entries:
           - title: trying to read more
           - title: generally a mess, but that's okay
       - title: they/them
+        entries:
+          - title: pronouns are complicated
+            url: pronouns
+          - title: tldr; it's nice if you use my pronouns
       - title: contact@almendra.dev
         url: mailto:contact@almendra.dev
       - title: pubkeys
