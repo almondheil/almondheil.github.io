@@ -2,24 +2,20 @@
 # https://github.com/riggraz/no-style-please#customize-the-menu
 
 entries:
-  - title: me (regular)
+  - title: this is me!
     entries:
-      - title: almond (they/them)
+      - title: almond
+        entries:
+          - title: linux nerd (sysadmin flavored)
+          - title: trying to read more
+          - title: generally a mess, but that's okay
+      - title: they/them
       - title: contact@almendra.dev
         url: mailto:contact@almendra.dev
-      - title: github
-        url: https://github.com/almondheil
       - title: pubkeys
         url: pubkeys
 
-  - title: me (professional)
-    entries:
-      - title: resume
-        url: almondHeil-Resume.pdf
-      - title: linkedin
-        url: https://www.linkedin.com/in/almond-heil
-
-  - title: today I learned
+  - title: "sometimes, I learn things I think are cool:"
     post_list:
       category: til
       limit: 5
@@ -27,10 +23,19 @@ entries:
       show_more_text: see more...
       show_more_url: til
 
-  - title: recent projects
+  - title: "these are some projects I'm proud of:"
     post_list:
       category: project
       limit: 5
       show_more: true
       show_more_text: see more...
       show_more_url: project
+
+  - title: "I guess I should link some professional stuff too:"
+    entries:
+      - title: github
+        url: https://github.com/almondheil
+      - title: linkedin
+        url: https://linkedin.com/in/almond-heil
+      - title: resume
+        url: almondHeil-Resume.pdf
