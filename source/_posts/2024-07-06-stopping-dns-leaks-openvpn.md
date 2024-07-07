@@ -23,7 +23,8 @@ sending DNS requests to those ISP servers, that means you're trusting them with
 your browsing data (which was probably not your plan if you're connecting to a
 VPN).
 
-I realized I had an IP leak by going to <https://ipleak.net>, which is a site
+I realized I had an IP leak by going to <https://ipleak.net>{:target="_blank"}
+, which is a site
 maintained by my VPN provider that tells you lots of information discoverable
 from your public IP.
 
@@ -34,7 +35,7 @@ from your public IP.
 ## My solution to the leak
 
 I ended up solving my DNS leak using the `update-systemd-resolved` script from
-<https://github.com/jonathanio/update-systemd-resolved> (not to be confused with
+<https://github.com/jonathanio/update-systemd-resolved>{:target="_blank"} (not to be confused with
 the `openvpn-update-resolv-conf` script, which is similar in intent but didn't
 work for me).
 
