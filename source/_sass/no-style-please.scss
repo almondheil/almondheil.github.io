@@ -1,3 +1,4 @@
+
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
   filter: invert(1);
@@ -19,8 +20,10 @@
   a:active:not(.headerLink), a:visited:active:not(.headerLink) { color: #00ffff; }
 
   code { 
-    background-color: #3e3e3e;
-    padding: 0.1em;
+    background-color: #d8d7dd;
+    color: #07070d;
+    padding: 0.4em;
+    border-radius: 5px;
   }
 
   ::selection { 
