@@ -9,4 +9,4 @@ Get the poison out!
 
 ---
 
-{% include image_gallery.html folder="/art/" %}
+{% include image_gallery.html folder="/assets/art/" %}

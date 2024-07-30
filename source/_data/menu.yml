@@ -28,7 +28,12 @@ entries:
       show_more_url: til
 
   - title: "doodles and pixel art"
-    url: art
+    post_list:
+      category: art
+      limit: 3
+      show_more: true
+      show_more_text: more...
+      show_more_url: art
 
   - title: "projects I'm proud of:"
     post_list:
