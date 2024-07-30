@@ -1,53 +1,82 @@
-
 // -------------- THEME SWITCHER -------------- //
-@mixin dark-appearance {
-  filter: invert(1);
-  img {
-    filter: invert(1);
 
-    &.ioda { filter: invert(0); }
-  }
+// LIGHT THEME (DEFAULT)
+:root {
+  // text and background color
+  --c-text: #000000;
+  --c-background: #ffffff;
 
-  /* override colors for dark mode 
-   * I could use invert(1) again, but this makes selection color invert too 
-   * and makes everything look super uneven.
-   * my fix is to hardcode the inverted values of what I want */
+  // color of background of block quote
+  // (should be close to --c-text)
+  --c-block-quote: #808080;
 
-  a:not(.headerLink) { 
-    color: #9b520e;
-  }
-  a:visited:not(.headerLink) { color: #58900a; }
-  a:active:not(.headerLink), a:visited:active:not(.headerLink) { color: #00ffff; }
+  // text and background color of code blocks
+  --c-code-text: #ffffff;
+  --c-code-block: #000000;
+  
+  // header color and highlight color
+  --c-header-inactive: #b6b6b6;
+  --c-header-highlight: #ffff00;
 
-  code { 
-    background-color: #d8d7dd;
-    color: #07070d;
-    padding: 0.4em;
-    border-radius: 5px;
-  }
-
-  ::selection { 
-    color: black;
-    background-color: #ca7b1b;
-  }
+  // colors for links
+  --c-link-unvisited: #0000ee;
+  --c-link-visited: #551a8b;
+  --c-link-active: #ff0000;
 }
 
-body[a="dark"] { @include dark-appearance; }
-
+// DARK THEME
 @media (prefers-color-scheme: dark) {
-  body[a="auto"] { @include dark-appearance; }
+  :root {
+    // text and background color
+    --c-text: #ffffff;
+    --c-background: #000000;
+
+    // color of text of block quote
+    // (should be close to --c-text)
+    --c-block-quote: #7f7f7f;
+
+    // text and background color of code blocks
+    --c-code-text: #ffffff;
+    --c-code-block: #35383c;
+
+    // header color and highlight color
+    --c-header-inactive: #494949;
+    --c-header-highlight: #ffff00;
+
+    // colors for links
+    --c-link-unvisited: #64adf1;
+    --c-link-visited: #a76ff5;
+    --c-link-active: #ff0000;
+  }
+
+  // invert "invert on dark appearance" images
+  img.ioda {
+    filter: invert(1);
+  }
 }
+
+
 // -------------------------------------------- //
 
 // bg color is also needed in html in order to
 // block body's background propagation
 // see: https://stackoverflow.com/a/61265706
-html, body { background: white; }
+html, body { background: var(--c-background); }
+
+a:not(.headerLink) {
+  color: var(--c-link-unvisited);
+}
+a:visited:not(.headerLink) { 
+  color: var(--c-link-visited);
+}
+a:active:not(.headerLink), a:visited:active:not(.headerLink) {
+  color: var(--c-link-active);
+}
 
 html { height: 100%; }
 
 body {
-  color: black;
+  color: var(--c-text);
   font-family: monospace;
   font-size: 16px;
   line-height: 1.4;
@@ -58,11 +87,6 @@ body {
 
 .post-meta { text-align: right; }
 
-::selection { 
-  color: white;
-  background-color: #3584e4;
-}
-
 h2, h3, h4, h5, h6 { margin-top: 3rem; }
 
 hr { margin: 2rem 0; }
@@ -71,7 +95,7 @@ p { margin: 1rem 0; }
 
 li { margin: 0.4rem 0; }
 
-*:target { background: yellow; }
+*:target { background: var(--c-header-highlight); }
 
 .w {
   max-width: 640px;
@@ -80,6 +104,7 @@ li { margin: 0.4rem 0; }
 }
 
 hr {
+  color: var(--c-block-quote);
   text-align: center;
   border: 0;
 
@@ -90,14 +115,14 @@ hr {
 table { width: 100%; }
 
 table, th, td {
-  border: thin solid black;
+  border: thin solid var(--c-text);
   border-collapse: collapse;
   padding: 0.4rem;
 }
 
 code {
-  color: white;
-  background: black;
+  color: var(--c-code-text);
+  background: var(--c-code-block);
   padding: 0.2ex;
 }
 
@@ -109,8 +134,8 @@ div.highlighter-rouge code {
 }
 
 blockquote {
-  border-left: 2px solid #808080;
-  color: #808080;
+  border-left: 2px solid var(--c-block-quote);
+  color: var(--c-block-quote);
   padding-left: 1rem;
   margin-left: 2rem;
 }
@@ -126,4 +151,39 @@ img.signature {
   display: block;
   margin-left: auto;
   margin-right: 0;
+}
+
+/* Fade target transparent over 1.5 seconds */
+*:target {
+    background: var(--c-header-highlight); /* fallback to non-animated yellow */
+    animation: fade_to_transparent 1.5s forwards
+}
+@keyframes fade_to_transparent {
+    from {
+        background: var(--c-header-highlight);
+    }
+    to {
+        background: transparent;
+    }
+}
+
+/* Format links to headers in a less obtrusive way,  */
+.headerLink {
+    color: var(--c-header-inactive);
+    padding-left: 1ex;
+    text-decoration: none;
+}
+.headerLink:hover {
+    color: var(--c-text);
+}
+
+.navlist {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+
+    li {
+        display: inline;
+        padding: 1ex;
+    }
 }
