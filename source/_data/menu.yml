@@ -24,15 +24,15 @@ entries:
       category: til
       limit: 3
       show_more: true
-      show_more_text: more...
+      show_more_text: all TILs
       show_more_url: til
 
-  - title: "doodles and pixel art"
+  - title: "pixel art"
     post_list:
       category: art
       limit: 3
-      show_more: true
-      show_more_text: more...
+      show_more: always
+      show_more_text: all art
       show_more_url: art
 
   - title: "projects I'm proud of:"
@@ -40,7 +40,7 @@ entries:
       category: project
       limit: 3
       show_more: true
-      show_more_text: more...
+      show_more_text: all projects
       show_more_url: project
 
   - title: "professional stuff (ugh)"
