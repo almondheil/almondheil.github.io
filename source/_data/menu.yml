@@ -19,23 +19,26 @@ entries:
       - title: pubkeys
         url: pubkeys
 
-  - title: "sometimes, I learn things I think are cool:"
+  - title: "cool things I've learned:"
     post_list:
       category: til
-      limit: 5
+      limit: 3
       show_more: true
-      show_more_text: see more...
+      show_more_text: more...
       show_more_url: til
 
-  - title: "these are some projects I'm proud of:"
+  - title: "doodles and pixel art"
+    url: art
+
+  - title: "projects I'm proud of:"
     post_list:
       category: project
-      limit: 5
+      limit: 3
       show_more: true
-      show_more_text: see more...
+      show_more_text: more...
       show_more_url: project
 
-  - title: "I guess I should link some professional stuff too:"
+  - title: "professional stuff (ugh)"
     entries:
       - title: github
         url: https://github.com/almondheil
