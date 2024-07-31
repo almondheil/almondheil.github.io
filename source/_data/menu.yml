@@ -10,16 +10,12 @@ entries:
           - title: trying to read more
           - title: generally a mess, but that's okay
       - title: they/them
-        entries:
-          - title: pronouns are complicated
-            url: pronouns
-          - title: tldr; it's nice if you use my pronouns
       - title: contact@almendra.dev
         url: mailto:contact@almendra.dev
       - title: pubkeys
         url: pubkeys
 
-  - title: "cool things I've learned:"
+  - title: "cool things I've learned"
     post_list:
       category: til
       limit: 3
@@ -35,7 +31,7 @@ entries:
       show_more_text: all art
       show_more_url: art
 
-  - title: "projects I'm proud of:"
+  - title: "projects I'm proud of"
     post_list:
       category: project
       limit: 3
