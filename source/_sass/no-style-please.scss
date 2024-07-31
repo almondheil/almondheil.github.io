@@ -1,4 +1,6 @@
-// -------------- THEME SWITCHER -------------- //
+//
+// THEME SWITCHER
+//
 
 // LIGHT THEME (DEFAULT)
 :root {
@@ -48,12 +50,10 @@
   }
 }
 
+//
+// GENERAL RULES
+// 
 
-// -------------------------------------------- //
-
-// bg color is also needed in html in order to
-// block body's background propagation
-// see: https://stackoverflow.com/a/61265706
 html, body { background: var(--c-background); }
 
 a:not(.headerLink) {
@@ -113,6 +113,19 @@ table, th, td {
   padding: 0.4rem;
 }
 
+blockquote {
+  border-left: 2px solid var(--c-text-secondary);
+  color: var(--c-text-secondary);
+  padding-left: 1rem;
+  margin-left: 2rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
 
 //
 // PYLINT CODE FORMATTING
@@ -155,25 +168,24 @@ code td pre {
   border: thin solid transparent;
 }
 
-blockquote {
-  border-left: 2px solid var(--c-text-secondary);
-  color: var(--c-text-secondary);
-  padding-left: 1rem;
-  margin-left: 2rem;
-}
 
-img {
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
-}
+//
+// CUSTOM SIGNATURE AT PAGE END
+//
 
 img.signature {
   width: 30%;
   display: block;
   margin-left: auto;
   margin-right: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
+
+//
+// LINKS TO PAGE HEADERS
+//
 
 /* Fade target transparent over 1.5 seconds */
 *:target {
@@ -198,6 +210,10 @@ img.signature {
 .headerLink:hover {
     color: var(--c-text);
 }
+
+//
+// NAVIGATION LIST
+//
 
 .navlist {
     list-style: none;
