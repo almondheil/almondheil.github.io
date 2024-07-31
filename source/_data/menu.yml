@@ -20,7 +20,7 @@ entries:
       category: til
       limit: 3
       show_more: true
-      show_more_text: all TILs
+      show_more_text: all learnings
       show_more_url: til
 
   - title: "pixel art"
@@ -43,7 +43,10 @@ entries:
     entries:
       - title: github
         url: https://github.com/almondheil
+        newtab: true
       - title: linkedin
         url: https://linkedin.com/in/almond-heil
+        newtab: true
       - title: resume
         url: almondHeil-Resume.pdf
+        newtab: true
