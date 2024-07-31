@@ -4,16 +4,14 @@
 :root {
   // text and background color
   --c-text: #000000;
-  --c-background: #ffffff;
+  --c-background: #E4E6E3;
+  --c-code-text: #ffffff;
+  --c-code-background: #000000;
 
   // color of background of block quote
   // (should be close to --c-text)
-  --c-block-quote: #808080;
+  --c-text-secondary: #808080;
 
-  // text and background color of code blocks
-  --c-code-text: #ffffff;
-  --c-code-block: #000000;
-  
   // header color and highlight color
   --c-header-inactive: #b6b6b6;
   --c-header-highlight: #ffff00;
@@ -29,15 +27,13 @@
   :root {
     // text and background color
     --c-text: #ffffff;
-    --c-background: #000000;
+    --c-background: #202126;
+    --c-code-text: #ffffff;
+    --c-code-background: #000000;
 
     // color of text of block quote
     // (should be close to --c-text)
-    --c-block-quote: #7f7f7f;
-
-    // text and background color of code blocks
-    --c-code-text: #ffffff;
-    --c-code-block: #27292C;
+    --c-text-secondary: #7f7f7f;
 
     // header color and highlight color
     --c-header-inactive: #494949;
@@ -104,7 +100,7 @@ li { margin: 0.4rem 0; }
 }
 
 hr {
-  color: var(--c-block-quote);
+  color: var(--c-text-secondary);
   text-align: center;
   border: 0;
 
@@ -115,27 +111,45 @@ hr {
 table { width: 100%; }
 
 table, th, td {
-  border: thin solid var(--c-text);
+  border: thin solid (--c-text);
   border-collapse: collapse;
   padding: 0.4rem;
 }
 
-code {
-  color: var(--c-code-text);
-  background: var(--c-code-block);
-  padding: 0.2ex;
+.CodeRay table, .CodeRay th, .CodeRay td {
+  border: 0px;
+  padding: 0.4rem;
 }
 
-div.highlighter-rouge code {
+// format CodeRay tables to scroll, but hide the outermost border (cuz it's ugly)
+.CodeRay {
   display: block;
   overflow-x: auto;
   white-space: pre;
-  padding: 1rem;
+  border: thin solid transparent;
+}
+
+// remove margin from above and below coderay preformatted text
+// (no, I can't figure out where it comes from in the first place)
+.CodeRay pre {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+// make the line numbers a different color
+.CodeRay .line-numbers {
+  color: var(--c-code-text);
+  background: var(--c-code-background);
+}
+
+.CodeRay .code {
+  color: var(--c-code-text);
+  background: var(--c-code-background);
 }
 
 blockquote {
-  border-left: 2px solid var(--c-block-quote);
-  color: var(--c-block-quote);
+  border-left: 2px solid var(--c-text-secondary);
+  color: var(--c-text-secondary);
   padding-left: 1rem;
   margin-left: 2rem;
 }
@@ -155,7 +169,7 @@ img.signature {
 
 /* Fade target transparent over 1.5 seconds */
 *:target {
-    background: var(--c-header-highlight); /* fallback to non-animated yellow */
+    background: var(--c-header-highlight); /* fallback to non-animated color if animation unsupported */
     animation: fade_to_transparent 1.5s forwards
 }
 @keyframes fade_to_transparent {
