@@ -36,7 +36,7 @@ of packages I had to install on Arch Linux, so your package names may vary.
 First, download the playlist with yt-dlp. The details here correspond to the
 playlist I was working with when first attempting this project.
 
-```
+```bash
 yt-dlp --extract-audio --audio-format wav --audio-quality 0 \
     "https://www.youtube.com/watch?v=Hti1jmkMrnU" \
     --output "azure - nujabes playlist for the groovy yayayayy"
@@ -90,7 +90,7 @@ comment containing timestamps (the kind you often find below one of
 these playlists) into a cuesheet TRACK list. You can find
 it [on my GitHub](https://github.com/almondheil/comment-to-cuesheet){:target="_blank"}.
 
-```
+```text
 REM GENRE Lo-Fi
 REM DATE 2024
 PERFORMER Nujabes
@@ -184,7 +184,7 @@ to split the audio file. I initially attempted to use the shnsplit program as
 the Arch Wiki recommends, but I had issues where it cut tracks in the wrong
 places. I still don't know what went wrong there.
 
-```
+```text
 ./split-cue -d playlist.cue
 ```
 
@@ -199,7 +199,7 @@ Next, use the metadata contained in the cuesheet to flesh out each file better.
 
 To get this script, I had to install the cuetools package.
 
-```
+```text
 cd '2024 - Nujabes - nujabes playlist for the groovy yayayayy'
 cuetag.sh ../playlist.cue *.mp3
 ```
@@ -222,7 +222,7 @@ directory.
 > If it succeeded (&&), we remove the temporary file. If it failed (||), we 
 > move the temporary file back to its original name to avoid messing up the directory state.
 
-```
+```bash
 for file in *.mp3; do
   tempfile="${file}.temp"
   mv "$file" "$tempfile"

@@ -53,7 +53,7 @@ Two main things to note from this table:
 
 At this point, I can actually answer my initial question by taking these averages:
 
-```
+```text
                       sum(values)
 average coin value = ------------- = $0.06
                       sum(number)
@@ -61,7 +61,7 @@ average coin value = ------------- = $0.06
 
 and 
 
-```
+```text
                      sum(masses)
 average coin mass = ------------- = 3.5g
                      sum(number)

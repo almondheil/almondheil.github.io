@@ -62,7 +62,7 @@ It turned out, I needed to make a pair of scripts that would toggle both
 Tailscale and its network interface whenever any OpenVPN configuration started.
 
 /etc/openvpn/up.sh:
-```
+```bash
 #!/bin/bash
 
 tailscale down
@@ -70,7 +70,7 @@ ifconfig tailscale0 down
 ```
 
 /etc/openvpn/down.sh:
-```
+```bash
 #!/bin/bash
 
 ifconfig tailscale0 up
@@ -85,7 +85,7 @@ Then, I had to make these scripts run when an OpenVPN connection went up or
 down. I started off with the example config that the script gave, and changed
 it to run two commands in sequence. This goes at the end of every .ovpn file.
 
-```
+```bash
 # update systemd-resolved before and after connecting
 script-security 2
 up '/bin/bash -c "/etc/openvpn/up.sh; /usr/bin/update-systemd-resolved"'
@@ -101,7 +101,7 @@ I had some issues where, even though the VPN DNS servers were showing up, the
 ISP ones showed up too. This took a lot of steps to figure out, but it turned
 out all I needed to do was add one more line to the end of every .ovpn file.
 
-```
+```bash
 # send all DNS queries over the VPN
 dhcp-option DOMAIN-ROUTE .
 ```
@@ -124,6 +124,6 @@ update-systemd-resolved. It turned out I just needed to make sure PATH was
 set correctly in each .ovpn file, since Fedora installed everything to very
 different locations (the problematic paths were in /usr/sbin).
 
-```
+```bash
 setenv PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```

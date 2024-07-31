@@ -56,14 +56,14 @@ False positives crop up when we are checking for containment. Consider a really 
 First, let's add some items to our array. Let's pretend that "hello" hashes to 
 [0, 7, 3]. Then, when we add it our bit array will contain the values
 
-```
+```text
 bits:  1 0 0 1 0 0 0 1 0 0
 i:     0 1 2 3 4 5 6 7 8 9
 ```
 
 Then, let's add "world" which hashes to [2, 5, 1]. Now, our bit array holds
 
-```
+```text
 bits:  1 1 1 1 0 1 0 1 0 0
 i:     0 1 2 3 4 5 6 7 8 9
 ```
