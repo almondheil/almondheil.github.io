@@ -30,7 +30,7 @@
 
     // color of text of block quote
     // (should be close to --c-text)
-    --c-text-secondary: #7f7f7f;
+    --c-text-secondary: #B3B3B3;
 
     // header color and highlight color
     --c-header-inactive: #494949;
@@ -108,33 +108,36 @@ hr {
 table { width: 100%; }
 
 table, th, td {
-  border: thin solid (--c-text);
+  border: thin solid var(--c-text-secondary);
   border-collapse: collapse;
   padding: 0.4rem;
 }
+
 
 //
 // PYLINT CODE FORMATTING
 // 
 
-// display code as a block, and allow it to scroll if lines are too long
 code {
+  // display code as a block, and allow it to scroll if lines are too long
   display: block;
   overflow-x: auto;
-  padding: 8px;
+
+  // make sure text doesn't hit the edges of the block
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: 8px;
 }
 
 // explicitly set margins to make both fenced blocks and highlight blocks
 // take up the same space as each other
 figure.highlight, div.highlight {
-  margin-bottom: 0px;
-  margin-left: 1rem;
-  margin-right: 0px;
-  margin-top: 0px;
+  margin: 0px;
 }
 
 // do not allow line numbers to be highlighted if they are shown
 code td.gutter {
+  color: var(--c-text-secondary);
   text-align: right;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -145,6 +148,11 @@ code td.gutter {
 code td pre {
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+// override general table formatting to hide borders on this table
+.highlight table, .highlight th, .highlight td {
+  border: thin solid transparent;
 }
 
 blockquote {
