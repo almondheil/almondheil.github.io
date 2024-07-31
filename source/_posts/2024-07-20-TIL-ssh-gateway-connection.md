@@ -11,7 +11,7 @@ some silly, goofy security regulation.
 
 We constantly need to log in and out of a couple machines that are only accessible through
 this gateway, so it gets frustrating to enter my password each time. Sure, you can avoid
-a password entry on the second jump with `ssh-copy-id`, but that doesn't help with the gateway.
+a password entry on the second jump with ssh-copy-id, but that doesn't help with the gateway.
 
 To the rescue comes one of my instructors, who has had to deal with this frustration for years
 longer and has developed an interesting workaround. The solution is to connect to the gateway and

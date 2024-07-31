@@ -9,6 +9,6 @@ title: Comment to Cuesheet
 ---
 
 A python script that attempts to convert from a YouTube comment containing playlist
-timestamps into the `TRACK` list of a cuesheet file.
+timestamps into the TRACK list of a cuesheet file.
 
 Meant to be used when [splitting a YouTube playlist into its individual songs](/til/split-youtube-cuelist).

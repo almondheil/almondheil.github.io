@@ -29,7 +29,7 @@ I wanted to list some of the things I did that I think are interesting, because
 I didn't see them talked about elsewhere.
 
 My big challenge: Grinnell has MathLAN, which is a bunch of machines with NFS-shared
-home dirs but nor much structure going on. They all have hostnames `<something>.cs.grinnell.edu`,
+home dirs but nor much structure going on. They all have hostnames <something>.cs.grinnell.edu,
 but I couldn't find anything in the templates that would let me check if the hostname *contained*
 something.
 

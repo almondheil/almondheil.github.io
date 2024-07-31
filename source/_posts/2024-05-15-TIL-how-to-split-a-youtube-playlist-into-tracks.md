@@ -24,12 +24,12 @@ my future reference and in case anyone else wants to do the same thing.
 
 The following tools are needed to follow this tutorial. I've given the names
 of packages I had to install on Arch Linux, so your package names may vary.
-- `ffmpeg`
-- `perl` (version 5)
-- `yt-dlp`
-- `cuetools`
-- `python-mutagen`
-- `lame`
+- ffmpeg
+- perl (version 5)
+- yt-dlp
+- cuetools
+- python-mutagen
+- lame
 
 ## Downloading the Playlist Audio
 
@@ -43,18 +43,18 @@ yt-dlp --extract-audio --audio-format wav --audio-quality 0 \
 ```
 
 Flag breakdown:
- - `--extract-audio` saves an audio file, rather than a video one.
- - `--audio-format wav` specifies the audio format that should be used.
+ - --extract-audio saves an audio file, rather than a video one.
+ - --audio-format wav specifies the audio format that should be used.
    I chose wav because it's accepted by a script we use down the line.
- - `--audio-quality 0` maximizes the audio quality we download.
- - `--output` sets the name of the saved file.
+ - --audio-quality 0 maximizes the audio quality we download.
+ - --output sets the name of the saved file.
 
 ## The Cuesheet Format
 
 At this point, we have one big audio file, but we the individual tracks. 
 
 There's only one issue: every tutorial I've been able to find assumes you already
-have a cuesheet file (with the `.cue` extension), which tells audio software where
+have a cuesheet file (with the .cue extension), which tells audio software where
 each track starts within the larger file.
 
 We don't have, one of those, though. Luckily, cuesheets are a plaintext format,
@@ -62,26 +62,32 @@ and we can roll our own! There is documentation for the format on the [libodraw 
 
 There are three really important things I gleaned from reading these sources:
 
-1. The cue file is laid out with a `FILE` at the top, that tells it what file the tracks come from
-2. For each track in the playlist, there is a `TRACK` block. 
+1. The cue file is laid out with a FILE at the top, that tells it what file the tracks come from
+2. For each track in the playlist, there is a TRACK block. 
 
-    It contains info about the track, but the most important thing is the start
-    time within the file. This is written as an `INDEX 01` line.
+   It contains info about the track, but the most important thing is the start
+   time within the file. This is written as an INDEX 01 line.
 
-3. The format for `INDEX` is `mm:ss:ff`, where that third item is frames. I just left frames set to `00`, since the timestamps on the YouTube video only go down to the second.
+3. The format for INDEX is mm:ss:ff, where that third item is frames. I just
+   left frames set to 00, since the timestamps on the YouTube video only go
+   down to the second.
   
-    Notice that the 'minutes' spot only gets two characters. That means we can't have a track that starts later than 1 hour 40 minutes. However, you should be able to manually split your audio file into two or more 99-minute chunks, in which case your cuesheet will have multiple `FILE` entries. I've never tried this before, however.
+   Notice that the 'minutes' spot only gets two characters. That means we
+   can't have a track that starts later than 1 hour 40 minutes. However, you
+   should be able to manually split your audio file into two or more 99-minute
+   chunks, in which case your cuesheet will have multiple FILE entries. I've
+   never tried this before, however.
 
 ## Creating Our Own Cuesheet
 
-With this knowledge in hand, I was able to write the following `playlist.cue` based on the one with the video, but tweaked to be a tiny bit more accurate for some songs.
+With this knowledge in hand, I was able to write the following playlist.cue based on the one with the video, but tweaked to be a tiny bit more accurate for some songs.
 
 You can write a cuesheet by hand, but as I tried to convert more 
 playlists the novelty wore off and I got really bored.
 
 To make it easier, I wrote a script that converts from a YouTube
 comment containing timestamps (the kind you often find below one of 
-these playlists) into a cuesheet `TRACK` list. You can find
+these playlists) into a cuesheet TRACK list. You can find
 it [on my GitHub](https://github.com/almondheil/comment-to-cuesheet){:target="_blank"}.
 
 ```
@@ -173,14 +179,16 @@ FILE "azure - nujabes playlist for the groovy yayayayy.wav" WAVE
 Now that we have a finished cuesheet, this tutorial starts looking more like others that
 can be found online. I'm going to see this to the end, just so I can document all the steps I ended up taking.
 
-I used a [perl script by xrgtn on GitHub](https://github.com/xrgtn/split-cue/){:target="_blank"} to split the audio file. I initially attempted to use the `shnsplit` program as the Arch Wiki recommends, but I had issues where it cut tracks in the
-wrong places. I still don't know what went wrong there.
+I used a [perl script by xrgtn on GitHub](https://github.com/xrgtn/split-cue/){:target="_blank"} 
+to split the audio file. I initially attempted to use the shnsplit program as
+the Arch Wiki recommends, but I had issues where it cut tracks in the wrong
+places. I still don't know what went wrong there.
 
 ```
 ./split-cue -d playlist.cue
 ```
 
-Here, the `-d` flag disables the CDDB query functionality of the script. This is
+Here, the -d flag disables the CDDB query functionality of the script. This is
 a feature that I didn't require, and I didn't want to spend the time of installing
 the perl module correctly.
 
@@ -189,7 +197,7 @@ the perl module correctly.
 After the script runs, you will have a directory with an mp3 file for each track.
 Next, use the metadata contained in the cuesheet to flesh out each file better.
 
-To get this script, I had to install the `cuetools` package.
+To get this script, I had to install the cuetools package.
 
 ```
 cd '2024 - Nujabes - nujabes playlist for the groovy yayayayy'
@@ -199,7 +207,7 @@ cuetag.sh ../playlist.cue *.mp3
 To add album art, you first need to find a suitable image. I went with the art
 linked on the YouTube playlist, 
 <https://yukoart.com/work/inq-mobile/>{:target="_blank"}. Save your image 
-as `image.jpg` in the same directory as the individual songs.
+as image.jpg in the same directory as the individual songs.
 
 > NOTE: Try to keep your file pretty small, since its size will be added on to each
 > track. 300x300 pixels is good.
@@ -208,10 +216,10 @@ To add the album art to a file, I found a useful command from Baeldung (<https:/
 I wrote a really simple bash loop that will add art to all the mp3 files in the current
 directory. 
 
-> NOTE: The funkiness with the `&&` and `||` lets us run a different command if ffmpeg
+> NOTE: The funkiness with the && and || lets us run a different command if ffmpeg
 > returned a success or returned a failure.
 >
-> If it succeeded (`&&`), we remove the temporary file. If it failed (`||`), we 
+> If it succeeded (&&), we remove the temporary file. If it failed (||), we 
 > move the temporary file back to its original name to avoid messing up the directory state.
 
 ```
@@ -224,6 +232,6 @@ for file in *.mp3; do
 done
 ```
 
-Then, just remove the `image.jpg` file--it is encoded into the metadata of the
+Then, just remove the image.jpg file--it is encoded into the metadata of the
 mp3s, and no longer needs to exist on disk. You should be ready to listen to your music,
 and the metadata and album art will be available to your music program!

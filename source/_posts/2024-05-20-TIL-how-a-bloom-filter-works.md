@@ -54,14 +54,14 @@ With that done, this is how we check if an item is contained in the filter:
 False positives crop up when we are checking for containment. Consider a really simple toy example, where our bit array is of length 10 and we have 3 hash functions.
 
 First, let's add some items to our array. Let's pretend that "hello" hashes to 
-`[0, 7, 3]`. Then, when we add it our bit array will contain the values
+[0, 7, 3]. Then, when we add it our bit array will contain the values
 
 ```
 bits:  1 0 0 1 0 0 0 1 0 0
 i:     0 1 2 3 4 5 6 7 8 9
 ```
 
-Then, let's add "world" which hashes to `[2, 5, 1]`. Now, our bit array holds
+Then, let's add "world" which hashes to [2, 5, 1]. Now, our bit array holds
 
 ```
 bits:  1 1 1 1 0 1 0 1 0 0
@@ -71,7 +71,7 @@ i:     0 1 2 3 4 5 6 7 8 9
 At this point, our array is starting to get pretty saturated. This is a bad sign,
 and it means we're going to start seeing more and more false positives. 
 
-Imagine we want to check whether "word" is contained, and it hashes to `[0, 1, 2]`.
+Imagine we want to check whether "word" is contained, and it hashes to [0, 1, 2]
 If we look in the bit array at these indices, we see that they are all 1. That means
 we return that "word" is already contained, even though it's not.
 
