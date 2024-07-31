@@ -20,7 +20,7 @@ entries:
       category: til
       limit: 3
       show_more: true
-      show_more_text: all learnings
+      show_more_text: all cool things
       show_more_url: til
 
   - title: "pixel art"
