@@ -20,7 +20,7 @@ across that gateway without having to reauthenticate.
 
 Here's the SSH config you need to add:
 
-```text
+```bash
 # This is a host that connects through the gateway
 Host server
   HostName server.example.com

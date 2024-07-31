@@ -184,7 +184,7 @@ to split the audio file. I initially attempted to use the shnsplit program as
 the Arch Wiki recommends, but I had issues where it cut tracks in the wrong
 places. I still don't know what went wrong there.
 
-```text
+```bash
 ./split-cue -d playlist.cue
 ```
 
@@ -199,7 +199,7 @@ Next, use the metadata contained in the cuesheet to flesh out each file better.
 
 To get this script, I had to install the cuetools package.
 
-```text
+```bash
 cd '2024 - Nujabes - nujabes playlist for the groovy yayayayy'
 cuetag.sh ../playlist.cue *.mp3
 ```
@@ -222,7 +222,7 @@ directory.
 > If it succeeded (&&), we remove the temporary file. If it failed (||), we 
 > move the temporary file back to its original name to avoid messing up the directory state.
 
-```bash
+{% highlight bash %}
 for file in *.mp3; do
   tempfile="${file}.temp"
   mv "$file" "$tempfile"
@@ -230,7 +230,7 @@ for file in *.mp3; do
     && rm "$tempfile" \
     || mv "$tempfile" "$file"
 done
-```
+{% endhighlight %}
 
 Then, just remove the image.jpg file--it is encoded into the metadata of the
 mp3s, and no longer needs to exist on disk. You should be ready to listen to your music,
