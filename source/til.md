@@ -4,6 +4,7 @@ which_category: til
 title: today I learned
 ---
 
-sometimes, I learn new things that I think are cool.
+Sometimes, I learn new things that I think are cool. Only I always forget them too fast... :(
 
-this page is because I want to remember them, and because other people might think they're cool too.
+Now I can keep that stuff here to look back at when I forget! Plus, the bonus that other people
+might stumble across them and find help too.
