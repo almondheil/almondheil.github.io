@@ -1,3 +1,8 @@
+/*
+I just pasted the Monokai colorscheme from the themes repo into ChatGPT
+and asked it to change the colors over to tomorrow night, then tweaked till
+I was happy with it. I think it did a pretty solid job lmao
+*/
 .highlight pre { background-color: #000000; }
 .highlight .hll { background-color: #373b41; }
 .highlight .c { color: #969896 } /* Comment */
