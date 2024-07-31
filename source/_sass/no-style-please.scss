@@ -117,18 +117,23 @@ table, th, td {
 // PYLINT CODE FORMATTING
 // 
 
-// remove margin on all sides of highlight figures
-figure.highlight {
-  margin: 0px;
-}
-
 // display code as a block, and allow it to scroll if lines are too long
 code {
   display: block;
   overflow-x: auto;
+  padding: 8px;
 }
 
-// if there are line numbers, do not let them be selectable
+// explicitly set margins to make both fenced blocks and highlight blocks
+// take up the same space as each other
+figure.highlight, div.highlight {
+  margin-bottom: 0px;
+  margin-left: 1rem;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+
+// do not allow line numbers to be highlighted if they are shown
 code td.gutter {
   text-align: right;
   -webkit-user-select: none;
@@ -136,8 +141,8 @@ code td.gutter {
   user-select: none;
 }
 
-// remove top/bottom margins on preformatted text in code blocks
-code pre {
+// get rid of large margins on preformatted text in pygments tables
+code td pre {
   margin-top: 0px;
   margin-bottom: 0px;
 }
