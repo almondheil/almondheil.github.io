@@ -7,13 +7,7 @@ description: > # description of the site (multiple lines allowed)
   a website where I'm going to put whatever I feel like. you could
   call it a digital garden, but it's not that fancy.
 
-# markdown settings, including syntax highlighting
 markdown: kramdown
-kramdown:
-  syntax_highlighter: coderay
-  syntax_highlighter_opts: 
-    line_numbers: table 
-    line_number_anchors: false
 
 permalink: /:categories/:slug # simplify urls
 

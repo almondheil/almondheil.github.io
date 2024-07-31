@@ -5,8 +5,6 @@
   // text and background color
   --c-text: #000000;
   --c-background: #E4E6E3;
-  --c-code-text: #ffffff;
-  --c-code-background: #000000;
 
   // color of background of block quote
   // (should be close to --c-text)
@@ -24,12 +22,11 @@
 
 // DARK THEME
 @media (prefers-color-scheme: dark) {
+  // override any color vars needed
   :root {
     // text and background color
     --c-text: #ffffff;
     --c-background: #202126;
-    --c-code-text: #ffffff;
-    --c-code-background: #000000;
 
     // color of text of block quote
     // (should be close to --c-text)
@@ -116,35 +113,13 @@ table, th, td {
   padding: 0.4rem;
 }
 
-.CodeRay table, .CodeRay th, .CodeRay td {
-  border: 0px;
-  padding: 0.4rem;
+figure.highlight {
+  margin: 0px;
 }
 
-// format CodeRay tables to scroll, but hide the outermost border (cuz it's ugly)
-.CodeRay {
+code {
   display: block;
   overflow-x: auto;
-  white-space: pre;
-  border: thin solid transparent;
-}
-
-// remove margin from above and below coderay preformatted text
-// (no, I can't figure out where it comes from in the first place)
-.CodeRay pre {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-// make the line numbers a different color
-.CodeRay .line-numbers {
-  color: var(--c-code-text);
-  background: var(--c-code-background);
-}
-
-.CodeRay .code {
-  color: var(--c-code-text);
-  background: var(--c-code-background);
 }
 
 blockquote {
