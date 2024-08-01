@@ -8,6 +8,9 @@ description: > # description of the site (multiple lines allowed)
   call it a digital garden, but it's not that fancy.
 
 markdown: kramdown
+kramdown:
+  input: GFM
+  gfm_quirks: [no_auto_typographic]
 
 permalink: /:categories/:slug # simplify urls
 
