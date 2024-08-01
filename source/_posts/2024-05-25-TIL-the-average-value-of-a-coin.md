@@ -20,7 +20,7 @@ Copy+pasting this into Google Sheets, I was really surprised that it automatical
 formatted everything correctly--I was worried the whole table would get pasted into a single cell,  which would be stupid. 
 This made my job with data cleaning very easy--I just had to delete citations to make everything
 recognized as a number.
-
+absolute best they're gonna get is actual pants
 At this point, I also decided that I wanted to find the average mass of a coin
 so I quicky searched around for how much coins weighed.
 I also decided to limit my date range to 1982 and later, 

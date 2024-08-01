@@ -22,6 +22,7 @@ configuration appear on all machines when it won't be used.
 ## My setup
 
 These are the chezmoi features I ended up taking advantage of:
+
 - sensitive file encryption with age (one time decrypt)
 - templated files based on user-defined config values
 

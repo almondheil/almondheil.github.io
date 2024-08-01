@@ -14,6 +14,7 @@ one myself. So I decided to learn how they actually work, and what makes them
 useful!
 
 ## Table of contents
+
 - [Table of contents](#table-of-contents)
 - [Surface-Level Usage](#surface-level-usage)
 - [How to implement?](#how-to-implement)

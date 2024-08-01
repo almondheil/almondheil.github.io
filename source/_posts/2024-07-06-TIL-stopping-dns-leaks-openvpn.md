@@ -23,8 +23,8 @@ sending DNS requests to those ISP servers, that means you're trusting them with
 your browsing data (which was probably not your plan if you're connecting to a
 VPN).
 
-I realized I had an IP leak by going to <https://ipleak.net>{:target="_blank"}
-, which is a site
+I realized I had an IP leak by going to <https://ipleak.net>{:target="_blank"},
+which is a site
 maintained by my VPN provider that tells you lots of information discoverable
 from your public IP.
 
@@ -62,6 +62,7 @@ It turned out, I needed to make a pair of scripts that would toggle both
 Tailscale and its network interface whenever any OpenVPN configuration started.
 
 /etc/openvpn/up.sh:
+
 ```bash
 #!/bin/bash
 
@@ -70,6 +71,7 @@ ifconfig tailscale0 down
 ```
 
 /etc/openvpn/down.sh:
+
 ```bash
 #!/bin/bash
 

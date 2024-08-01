@@ -12,6 +12,7 @@ I wanted to write a tutorial about it, both for
 my future reference and in case anyone else wants to do the same thing.
 
 ## Table of contents
+
 - [Table of contents](#table-of-contents)
 - [Requirements](#requirements)
 - [Downloading the Playlist Audio](#downloading-the-playlist-audio)
@@ -24,6 +25,7 @@ my future reference and in case anyone else wants to do the same thing.
 
 The following tools are needed to follow this tutorial. I've given the names
 of packages I had to install on Arch Linux, so your package names may vary.
+
 - ffmpeg
 - perl (version 5)
 - yt-dlp
@@ -43,11 +45,12 @@ yt-dlp --extract-audio --audio-format wav --audio-quality 0 \
 ```
 
 Flag breakdown:
- - --extract-audio saves an audio file, rather than a video one.
- - --audio-format wav specifies the audio format that should be used.
-   I chose wav because it's accepted by a script we use down the line.
- - --audio-quality 0 maximizes the audio quality we download.
- - --output sets the name of the saved file.
+
+- --extract-audio saves an audio file, rather than a video one.
+- --audio-format wav specifies the audio format that should be used.
+  I chose wav because it's accepted by a script we use down the line.
+- --audio-quality 0 maximizes the audio quality we download.
+- --output sets the name of the saved file.
 
 ## The Cuesheet Format
 
