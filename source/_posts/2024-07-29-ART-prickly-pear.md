@@ -3,9 +3,11 @@ layout: post
 category: art
 slug: prickly pear
 title: prickly pear / nopal
+image: /assets/art/prickly-pear.png
+alt: Pixel art of a prickly pear pad with red fruit
 ---
 
-![Pixel art of a prickly pear pad with fruit](/assets/art/prickly-pear.png)
+![{{ page.alt }}]({{ page.image }})
 
 Prickly pear, also known as Nopal, is an adorable little cactus that I've always admired.
 It's so cute! I have a real soft spot for cacti.

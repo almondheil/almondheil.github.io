@@ -12,4 +12,4 @@ Inspired by a lot of things, but especially a wonderful video about making art:
 ---
 {: data-content=" Get the poison out! "}
 
-{% include image_gallery.html folder="/assets/art/" %}
+{% include image_gallery.html category="art" %}

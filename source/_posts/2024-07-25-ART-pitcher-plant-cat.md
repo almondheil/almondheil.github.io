@@ -3,9 +3,11 @@ layout: post
 category: art
 slug: pitcher plant cat
 title: cat based on a pitcher plant
+image: /assets/art/pitcher-plant-cat.png
+alt: Pixel art of a green Cheshire Cat figure, with a tail
 ---
 
-![Pixel art of a green Cheshire Cat figure, with a tail ](/assets/art/pitcher-plant-cat.png)
+![{{ page.alt }}]({{ page.image }})
 
 This is a silly character I decided to draw after my friend sent me a picture of some pitcher plants they had
 run into. I started off trying to draw the pitcher plant, but then I decided it looked like the tail of some
