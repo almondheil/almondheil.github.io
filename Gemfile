@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'jekyll', github: 'jekyll/jekyll'
+gem 'jekyll-redirect-from'
 gem 'json'
 gem 'kramdown'
 gem 'kramdown-parser-gfm'
