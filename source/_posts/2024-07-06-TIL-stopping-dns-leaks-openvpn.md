@@ -5,6 +5,18 @@ slug: fix openvpn dns leak
 title: Fixing an OpenVPN DNS Leak
 ---
 
+
+# Update 2024-08-13: WireGuard is easier
+
+After switching to Arch again I was trying to do this all in Ansible, and once again
+I was still seeing leaks after setting everything up. I got frustrated and wanted
+to test out the WireGuard configurations my VPN provider can create, and the moment
+I used on of those it just...worked. No leaks, no need to tweak configurations.
+
+Going forward, I'm just gonna use that. Sighhhh...
+
+# The original post
+
 After reinstalling my machine, I was playing around with my VPN settings and
 trying to use openvpn on the command line rather than previous methods.
 However, my efforts were partially foiled when I realized I had created a DNS
@@ -42,7 +54,7 @@ work for me).
 I also tested out vpnfailsafe, but this turned out to not be what I
 wanted--when I disconnect my VPN, that's an expected part of the workflow since
 none of my school resources work when connected to a VPN. vpnfailsafe treats
-this as a fail state and cuts of connectivity altogether, which isn't what I
+this as a fail state and cuts off connectivity altogether, which isn't what I
 wanted.
 
 ## Notes for installing update-systemd-resolved, from across two distros
