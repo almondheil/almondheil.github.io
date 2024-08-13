@@ -124,6 +124,7 @@ I did this by using the `vars_prompt` directive in my playbook, where I could
 give prompts and variables to store the responses in:
 
 ```yaml
+---
 - hosts: laptop
   vars_prompt:
     - name: chezmoi_passphrase
