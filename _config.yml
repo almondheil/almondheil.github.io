@@ -4,8 +4,8 @@ email: contact@almendra.dev # email of site's author
 url: https://almendra.dev # root address of the site
 baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if your site shouldn't use a subpath)
 description: > # description of the site (multiple lines allowed)
-  a website where I'm going to put whatever I feel like. you could
-  call it a digital garden, but it's not that fancy.
+  a website where I'm going to put whatever I feel like. right now,
+  it has things I've learned, art, and projects I enjoyed :)
 
 markdown: kramdown
 kramdown:
