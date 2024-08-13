@@ -20,11 +20,18 @@
   --c-link-unvisited: #0000ee;
   --c-link-visited: #551a8b;
   --c-link-active: #ff0000;
+
+  // colors for code blocks
+  // for formatted code, gets overwritten by pygments highlighting
+  --c-code-block: #ffffff;
+  --c-code-inline: #F4CF86;
+  --c-code-background: #000000;
 }
 
 // DARK THEME
 @media (prefers-color-scheme: dark) {
   // override any color vars needed
+  // if they're already set above, no need :)
   :root {
     // text and background color
     --c-text: #ffffff;
@@ -131,7 +138,19 @@ img {
 // PYLINT CODE FORMATTING
 // 
 
+// code that does NOT have syntax highlighting
+// both inline and block
 code {
+  background: var(--c-code-background);
+  color: var(--c-code-inline);
+  padding: .2rem;
+}
+
+// code that is part of a highlight block
+.highlight code {
+  // overwrite default non-highlight code color
+  color: var(--c-code-block);
+
   // display code as a block, and allow it to scroll if lines are too long
   display: block;
   overflow-x: auto;
