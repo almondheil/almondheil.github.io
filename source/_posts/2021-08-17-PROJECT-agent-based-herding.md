@@ -1,6 +1,8 @@
 ---
 layout: page
 category: project
+slug: agent based
+title: Agent-Based Herding
 ---
 
 <https://github.com/almondheil/agent-based-herding>{:target="_blank"}

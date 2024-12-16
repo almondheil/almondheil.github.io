@@ -1,6 +1,8 @@
 ---
 layout: page
 category: project
+slug: echelon
+title: Echelon C
 ---
 
 <https://github.com/almondheil/echelon-c>{:target="_blank"}

@@ -1,6 +1,8 @@
 ---
 layout: page
 category: project
+slug: csc105 tutorial
+title: CSC105 Python Tutorial
 ---
 
 <https://github.com/almondheil/csc105-python-tutorial>{:target="_blank"}
