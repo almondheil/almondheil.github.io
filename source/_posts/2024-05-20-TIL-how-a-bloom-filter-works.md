@@ -23,6 +23,7 @@ useful!
 ## Surface-Level Usage
 
 A bloom filter is sort of like a hash set, where you can add items to it and check for containment. There's one big advantage they have, and a corresponding disadvantage.
+
 - **small, fixed space** - A bloom filter never grows or shrinks the memory it uses,
    no matter how many items you add to it. Also, it doesn't store the items
    you add, but rather a bit array. This makes it pretty space-efficient.
@@ -35,16 +36,19 @@ I started off with: how do you implement something like this? I worked through [
 describe what I found the most helpful.
 
 The backing structure of a bloom filter looks something like this:
+
 - A bit array of some fixed size
 - Several hash functions
   - I'm being vague about the numbers here, because the optimal values are defined
     by formulas I still don't understand. See the GeeksForGeeks article for those.
 
 Then, we can add to the filter like so:
+
 1. Use the different hash functions to generate indices within the bit array. The more hash functions, the more indices.
 2. For each index, set that position in the bit array to 1. We might have overlap with a previously added item, which is to be expected. (This is where false positives start to creep in.)
 
 With that done, this is how we check if an item is contained in the filter:
+
 1. Generate the same list of multiple indices as when we added, using the different hash functions.
 2. Check the bit array at each index.
    1. If **any** of them are 0, we can be certain we never added this item.
