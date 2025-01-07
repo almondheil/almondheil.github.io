@@ -2,6 +2,7 @@
 layout: page
 category: project
 title: ftag
+slug: ftag
 ---
 
 <https://github.com/almondheil/ftag>{:target="_blank"}

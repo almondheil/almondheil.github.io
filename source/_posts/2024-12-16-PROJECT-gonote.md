@@ -2,6 +2,7 @@
 layout: page
 category: project
 title: gonote
+slug: gonote
 ---
 
 <https://github.com/almondheil/gonote>{:target="_blank"}

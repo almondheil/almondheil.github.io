@@ -2,6 +2,7 @@
 layout: page
 category: project
 title: Comment to Cuesheet
+slug: comment-to-cuesheet
 ---
 
 <https://github.com/almondheil/comment-to-cuesheet>{:target="_blank"}

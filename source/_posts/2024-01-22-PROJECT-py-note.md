@@ -2,6 +2,7 @@
 layout: page
 category: project
 title: py_note
+slug: py_note
 ---
 
 <https://github.com/almondheil/py-note>{:target="_blank"}
