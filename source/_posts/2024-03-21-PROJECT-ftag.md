@@ -5,7 +5,7 @@ title: ftag
 slug: ftag
 ---
 
-<https://github.com/almondheil/ftag>{:target="_blank"}
+<https://github.com/almondheil/ftag-personal>{:target="_blank"}
 
 ---
 
