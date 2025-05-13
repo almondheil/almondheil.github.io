@@ -31,22 +31,50 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Check out the WHOLE repo
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      # GH pages setip
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      # Ruby setup
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
+
+      # Python setup
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python_version: '3.13'
+          cache: pip
+      - name: Install MkDocs and dependencies
+        run: python3 -m pip install mkdocs mkdocs-material
+
+      # Build main site
+      - name: Build main site (Jekyll)
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+
+      # Build mkdocs (eng240-final)
+      - name: Build eng240-final (MkDocs)
+        working-directory: ./eng240-final
+        # outputs to `./eng240-final/site`
+        run: mkdocs build
+      - name: Move eng240-site to main site dir
+        run: mv ./eng240-final/site/ ./_site/eng240-final
+
+      # Upload finished artifact
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
