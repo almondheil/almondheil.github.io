@@ -1,3 +1,6 @@
 [submodule "eng240-final"]
 	path = eng240-final
 	url = https://github.com/almondheil/eng240-final.git
+[submodule "GetGrinnected"]
+	path = GetGrinnected
+	url = https://github.com/seehorne/GetGrinnected.git
