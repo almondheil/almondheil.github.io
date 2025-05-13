@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Check out the WHOLE repo
-      - name: Checkout
+      - name: Checkout (will take ages because of submodules)
         uses: actions/checkout@v4
         with:
           submodules: recursive
@@ -57,16 +57,16 @@ jobs:
           python_version: '3.13'
           cache: pip
       - name: Install MkDocs and dependencies
-        run: python3 -m pip install mkdocs mkdocs-material
+        run: python3 -m pip install mkdocs mkdocs-material mkdocs-render-swagger-plugin
 
-      # Build main site
+      # Main site
       - name: Build main site (Jekyll)
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 
-      # Build mkdocs (eng240-final)
+      # ENG-240 final project
       - name: Build eng240-final (MkDocs)
         working-directory: ./eng240-final
         # outputs to `./eng240-final/site`
@@ -74,8 +74,16 @@ jobs:
       - name: Move eng240-site to main site dir
         run: mv ./eng240-final/site/ ./_site/eng240-final
 
+      # GetGrinnected docs
+      - name: Build GetGrinnected Docs (MkDocs)
+        working-directory: ./GetGrinnected
+        # outputs to `./GetGrinnected/site`
+        run: mkdocs build
+      - name: Move GetGrinnected Docs to main site dir
+        run: mv ./GetGrinnected/site/ ./_site/getgrinnected-docs
+
       # Upload finished artifact
-      - name: Upload artifact
+      - name: Upload pages artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
 
