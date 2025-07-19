@@ -1,7 +1,7 @@
 title: almendra # name of the site
 author: almond Heil # name of site's author
 email: contact@almendra.dev # email of site's author
-url: https://almondheil.github.io
+#url: https://almondheil.github.io
 baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if your site shouldn't use a subpath)
 description: > # description of the site (multiple lines allowed)
   a website where I'm going to put whatever I feel like. right now,
