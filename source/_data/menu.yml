@@ -10,8 +10,7 @@ entries:
           - title: trying to read more
           - title: generally a mess, but that's okay
       - title: they/them
-      - title: contact@almendra.dev
-        url: mailto:contact@almendra.dev
+      - title: 'contact @ <this website>'
       - title: pubkeys
         url: pubkeys
 
